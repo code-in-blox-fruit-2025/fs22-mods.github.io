@@ -3,36 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download</title>
+  <title>Modern Download Page</title>
   <style>
+    /* Body styling */
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
-      background-color: #f4f4f4;
     }
 
+    /* Navigation bar styling */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline-block;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 15px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #0078ff;
+    }
+
+    /* Main section styling */
+    main {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    /* Download button styling */
     .download-btn {
       display: inline-block;
       padding: 15px 30px;
-      background-color: #4CAF50;
+      background-color: #0078ff;
       color: white;
-      text-align: center;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 25px;
       font-size: 18px;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
 
     .download-btn:hover {
-      background-color: #45a049;
+      background-color: #005bb5;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+    }
+
+    /* Footer styling */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #0078ff;
     }
   </style>
 </head>
 <body>
-  <a href="https://shorturl.at/a1tQL" class="download-btn">Go to Website</a>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="home">
+    <h1>Welcome to FS22 Mods</h1>
+    <p>Discover the best mods for Farming Simulator 22. Enhance your gameplay now!</p>
+    <a href="https://shorturl.at/a1tQL" class="download-btn">Download Now</a>
+  </main>
+
+  <footer>
+    <p>© 2025 FS22 Mods. Need help? <a href="mailto:support@fs22mods.com">Contact Us</a></p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').slice(1);
+        document.getElementById(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
